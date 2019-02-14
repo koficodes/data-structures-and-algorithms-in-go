@@ -1,5 +1,7 @@
 package linkedlist
 
+import "fmt"
+
 //Node type in linked list
 type Node struct {
 	data interface{}
@@ -24,4 +26,13 @@ func (l *LinkedList) append(data interface{}) {
 
 	current.next = &Node{data: data}
 
+}
+
+func main() {
+	lList := LinkedList{}
+	lList.append("foo")
+	lList.append("bar")
+	for i := lList.head; i != nil; i = i.next {
+		fmt.Println(i)
+	}
 }
