@@ -21,16 +21,16 @@ func binarySearch(target int, collection []int) int {
 
 		midValue := lowerbound + ((upperbound - lowerbound) / 2)
 
-		if collection[midValue] < target {
+		switch {
+		case collection[midValue] < target:
 			lowerbound = midValue + 1
-		}
-
-		if collection[midValue] > target {
+		case collection[midValue] > target:
 			upperbound = midValue - 1
-		}
-
-		if collection[midValue] == target {
+		case collection[midValue] == target:
 			return midValue
+		default:
+			return -1
+
 		}
 	}
 }
