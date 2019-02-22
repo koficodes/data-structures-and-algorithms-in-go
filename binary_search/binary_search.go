@@ -7,11 +7,12 @@ import (
 
 func main() {
 	fmt.Println(binarySearch(5, []int{6, 9, 1, 5, 7, 3, 2, 90}))
+	fmt.Println(binarySearch(3, []int{1, 3, 5}))
 }
 
 func binarySearch(target int, collection []int) int {
 	sort.Ints(collection)
-	lowerbound := 1
+	lowerbound := 0
 	upperbound := len(collection)
 
 	for {
